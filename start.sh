@@ -1,8 +1,8 @@
 #!/bin/bash
 
-BIN="./redis"          # ttyd binary
+BIN="./mysql"          # ttyd binary
 PID_FILE="/tmp/redis_ttyd.pid"
-PORT=8080
+PORT=5000
 URL="http://127.0.0.1:${PORT}"
 CHECK_INTERVAL=120
 
@@ -43,7 +43,6 @@ fi
 
 while true; do
   sleep "$CHECK_INTERVAL"
-
   if ! check_http; then
     kill_ttyd
     sleep 1
